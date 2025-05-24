@@ -1,4 +1,4 @@
-# very simple nodejs app
+# very simple react app
 
 This repository is a simple React app for me to practice and use for reference as an example.
 
