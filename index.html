@@ -18,11 +18,23 @@
             return <h1>Develop. Preview. Ship.</h1>;
         }
 
+        /**
+         * Example of how component <Header />
+         * can be nexted inside another component
+         */
+        function HomePage() {
+            return (
+                <div>
+                    <Header />
+                </div>
+            );
+        }
+
         const root = ReactDOM.createRoot(app);
-        root.render(<Header />);
+        root.render(<HomePage />);
 
         /* Notice above how HTML style markup passes the function to root.render()
-         rather than root.render(Header) which would throw an error */
+         rather than root.render(HomePage) which would throw an error */
 
     </script>
   </body>
