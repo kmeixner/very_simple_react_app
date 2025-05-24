@@ -6,45 +6,35 @@
     <!-- babel is required to interpret JSX : -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/jsx">
-
-        // notice type above is text/jsx not text/javascript
-
         const app = document.getElementById('app');
 
-        /**
-         * Note: This function. "Header()" is referred to as a React Component
-         */
         function Header({ title }) { // Note: name Header() needs to be capitalized
             // Note: {title} above used ES6 destructuring feature to get value from prop object
             return <h1>{title ? title : 'Default title'}</h1>; // terniary operator example
         }
 
-//        // older example demonstrating use of string literal
-//        function Header({ title }) { // Note: name Header() needs to be capitalized
-//            // Note: {title} above used ES6 destructuring feature to get value from prop object
-//
-//            console.log(title); // "React"
-//            // return <h1>{title}</h1>; // return variable val directly
-//            return <h1>{`Cool ${title}`}</h1>; // return variable val via string literal
-//            // (note use backtick ` for string literals)
-//        }
-
-//        // example without object destructuring, just use (props):
-//        function Header(props) {
-//            console.log(props); // { title: "React" }
-//            return <h1>{props.title}</h1>;
-//        }
-
-        /**
-         * Example of how component <Header />
-         * can be nexted inside another component
-         */
         function HomePage() {
+
+            /* Reminder, React requires a unique key (eg: id below)
+               for each item or the compiler will complain
+               an array of just names ['John', 'Crystal', 'Bob']
+               would work but React would complain so we must use
+               the format below instead
+            */
+            const names = [
+                {id:1, name: 'Ada Lovelace'},
+                {id:2, name: 'Grace Hopper'},
+                {id:3, name: 'Margaret Hamilton'}
+            ];
+
             return (
                 <div>
-                    <Header title="React" />
-                    <Header title="A new title" />
-                    <Header />
+                <Header title="Develop. Preview. Ship." />
+                <ul>
+                    {names.map((name) => (
+                    <li key={name.id}>{name.name}</li>
+                    ))}
+                </ul>
                 </div>
             );
         }
