@@ -1,0 +1,60 @@
+<html>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- babel is required to interpret JSX : -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+
+        // notice type above is text/jsx not text/javascript
+
+        const app = document.getElementById('app');
+
+        /**
+         * Note: This function. "Header()" is referred to as a React Component
+         */
+        function Header({ title }) { // Note: name Header() needs to be capitalized
+            // Note: {title} above used ES6 destructuring feature to get value from prop object
+            return <h1>{title ? title : 'Default title'}</h1>; // terniary operator example
+        }
+
+//        // older example demonstrating use of string literal
+//        function Header({ title }) { // Note: name Header() needs to be capitalized
+//            // Note: {title} above used ES6 destructuring feature to get value from prop object
+//
+//            console.log(title); // "React"
+//            // return <h1>{title}</h1>; // return variable val directly
+//            return <h1>{`Cool ${title}`}</h1>; // return variable val via string literal
+//            // (note use backtick ` for string literals)
+//        }
+
+//        // example without object destructuring, just use (props):
+//        function Header(props) {
+//            console.log(props); // { title: "React" }
+//            return <h1>{props.title}</h1>;
+//        }
+
+        /**
+         * Example of how component <Header />
+         * can be nexted inside another component
+         */
+        function HomePage() {
+            return (
+                <div>
+                    <Header title="React" />
+                    <Header title="A new title" />
+                    <Header />
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(app);
+        root.render(<HomePage />);
+
+        /* Notice above how HTML style markup passes the function to root.render()
+         rather than root.render(HomePage) which would throw an error */
+
+    </script>
+  </body>
+</html>
