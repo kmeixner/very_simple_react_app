@@ -29,10 +29,25 @@
                 {id:3, name: 'Margaret Hamilton'}
             ];
 
+            /*** States ***/
+
+            /* Note: You can call value and setter anything you want,
+               since we are counting likes we'll use 'like', 'setLikes'
+             */
+            const [likes, setLikes] = React.useState(0); // 0 is passed in as initial value of 'likes'
+
+            /*
+            IMPORTANT: Unlike props which are passed to components as the first function parameter,
+            the STATE is initiated and stored within a component.
+            You can pass the state information to children components as props,
+            but the logic for updating the state should be kept within the component
+            where state was initially created.
+            */
+
             /*** Event Handlers: ***/
 
             function handleClick() {
-                console.log("increment like count")
+                setLikes(likes + 1);
             }
 
             /*** Components: ***/
@@ -45,7 +60,7 @@
                     <li key={name.id}>{name.name}</li>
                     ))}
                 </ul>
-                    <button onClick={handleClick}>Like</button>
+                    <button onClick={handleClick}>Like({likes})</button>
                 </div>
             );
         }
