@@ -14,9 +14,18 @@
         /**
          * Note: This function. "Header()" is referred to as a React Component
          */
-        function Header() { // Note the name must be capitalized
-            return <h1>Develop. Preview. Ship.</h1>;
+        function Header({ title }) { // Note: name Header() needs to be capitalized
+            // Note: {title} above used ES6 destructuring feature to get value from prop object
+
+            console.log(title); // "React"
+            return <h1>{title}</h1>;
         }
+
+//        // example without object destructuring, just use (props):
+//        function Header(props) {
+//            console.log(props); // { title: "React" }
+//            return <h1>{props.title}</h1>;
+//        }
 
         /**
          * Example of how component <Header />
@@ -25,7 +34,7 @@
         function HomePage() {
             return (
                 <div>
-                    <Header />
+                    <Header title="React" />
                 </div>
             );
         }
