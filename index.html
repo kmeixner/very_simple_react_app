@@ -16,12 +16,18 @@
          */
         function Header({ title }) { // Note: name Header() needs to be capitalized
             // Note: {title} above used ES6 destructuring feature to get value from prop object
-
-            console.log(title); // "React"
-            // return <h1>{title}</h1>; // return variable val directly
-            return <h1>{`Cool ${title}`}</h1>; // return variable val via string literal
-            // (note use backtick ` for string literals)
+            return <h1>{title ? title : 'Default title'}</h1>; // terniary operator example
         }
+
+//        // older example demonstrating use of string literal
+//        function Header({ title }) { // Note: name Header() needs to be capitalized
+//            // Note: {title} above used ES6 destructuring feature to get value from prop object
+//
+//            console.log(title); // "React"
+//            // return <h1>{title}</h1>; // return variable val directly
+//            return <h1>{`Cool ${title}`}</h1>; // return variable val via string literal
+//            // (note use backtick ` for string literals)
+//        }
 
 //        // example without object destructuring, just use (props):
 //        function Header(props) {
@@ -37,6 +43,8 @@
             return (
                 <div>
                     <Header title="React" />
+                    <Header title="A new title" />
+                    <Header />
                 </div>
             );
         }
