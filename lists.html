@@ -14,6 +14,13 @@
         }
 
         function HomePage() {
+
+            /* Reminder, React requires a unique key (eg: id below)
+               for each item or the compiler will complain
+               an array of just names ['John', 'Crystal', 'Bob']
+               would work but React would complain so we must use
+               the format below instead
+            */
             const names = [
                 {id:1, name: 'Ada Lovelace'},
                 {id:2, name: 'Grace Hopper'},
