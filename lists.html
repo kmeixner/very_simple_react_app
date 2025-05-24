@@ -1,0 +1,43 @@
+<html>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- babel is required to interpret JSX : -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+        const app = document.getElementById('app');
+
+        function Header({ title }) { // Note: name Header() needs to be capitalized
+            // Note: {title} above used ES6 destructuring feature to get value from prop object
+            return <h1>{title ? title : 'Default title'}</h1>; // terniary operator example
+        }
+
+        function HomePage() {
+            const names = [
+                {id:1, name: 'Ada Lovelace'},
+                {id:2, name: 'Grace Hopper'},
+                {id:3, name: 'Margaret Hamilton'}
+            ];
+
+            return (
+                <div>
+                <Header title="Develop. Preview. Ship." />
+                <ul>
+                    {names.map((name) => (
+                    <li key={name.id}>{name.name}</li>
+                    ))}
+                </ul>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(app);
+        root.render(<HomePage />);
+
+        /* Notice above how HTML style markup passes the function to root.render()
+         rather than root.render(HomePage) which would throw an error */
+
+    </script>
+  </body>
+</html>
