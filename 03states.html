@@ -15,6 +15,8 @@
 
         function HomePage() {
 
+            /*** Variables and Data: ***/
+
             /* Reminder, React requires a unique key (eg: id below)
                for each item or the compiler will complain
                an array of just names ['John', 'Crystal', 'Bob']
@@ -27,9 +29,13 @@
                 {id:3, name: 'Margaret Hamilton'}
             ];
 
+            /*** Event Handlers: ***/
+
             function handleClick() {
                 console.log("increment like count")
             }
+
+            /*** Components: ***/
 
             return (
                 <div>
