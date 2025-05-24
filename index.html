@@ -18,7 +18,9 @@
             // Note: {title} above used ES6 destructuring feature to get value from prop object
 
             console.log(title); // "React"
-            return <h1>{title}</h1>;
+            // return <h1>{title}</h1>; // return variable val directly
+            return <h1>{`Cool ${title}`}</h1>; // return variable val via string literal
+            // (note use backtick ` for string literals)
         }
 
 //        // example without object destructuring, just use (props):
