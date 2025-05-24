@@ -1,4 +1,4 @@
-# simple nodejs app
+# very simple nodejs app
 
 This repository is a simple React app for me to practice and use for reference as an example.
 
@@ -23,11 +23,11 @@ A web browser to view the React pages.
 
 1. ** clone the git repository **
 
-git clone https://github.com/kmeixner/simple_react_app
+git clone https://github.com/kmeixner/very_simple_react_app
 
 ## Running the Application
 
 Simply goto the location where you have cloned the repository:
 
-Eg: browse to something like file:///C:/my_dev_files/simple_react_app/index.htmlsimple_react_app/index.html
+Eg: browse to something like file:///C:/my_dev_files/very_simple_react_app/index.html
 on your computer.
